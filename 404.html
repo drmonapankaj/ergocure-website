@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting — Ergocure</title>
+<script>
+  // Redirect old .aspx URLs to .html
+  var path = window.location.pathname;
+  if (path.endsWith('.aspx')) {
+    window.location.replace(path.replace('.aspx', '.html'));
+  } else {
+    // Show a simple not found message for truly missing pages
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('msg').style.display = 'block';
+    });
+  }
+</script>
+</head>
+<body>
+<div id="msg" style="display:none;text-align:center;padding:80px 20px;font-family:Arial,sans-serif;">
+  <h1 style="color:#1B242F;">Page Not Found</h1>
+  <p style="color:#555;">The page you're looking for doesn't exist.</p>
+  <a href="/" style="color:#23B5B9;text-decoration:none;font-weight:bold;">Go to Ergocure Home</a>
+</div>
+</body>
+</html>
